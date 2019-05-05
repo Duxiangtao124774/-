@@ -1,0 +1,62 @@
+$g_w:36px;
+$g_h:36px;
+@font-face {
+    font-family: fpIconFont;
+    src: url('../fonts/font_eu7qkdb0zt3jif6r.woff') format('woff')
+}
+
+.fp-iconfont {
+    font-family: fpIconFont!important;
+    font-size: $font + 4;
+    font-style: normal
+}
+
+#guide {
+    @include position(fixed,
+    30px,
+    200px);
+    text-align: center;
+    @include g_cl();
+    .guide_header {
+        width: $g_w;
+        height: $g_h;
+        font-size: $font - 2;
+        line-height: $g_h;
+        background-color: #ff0036;
+        cursor: pointer;
+    }
+    .guide_list {
+        a {
+            @extend .guide_header;
+            display: block;
+            line-height: 0;
+            overflow: hidden;
+            @include g_margin();
+            @include g_bk();
+            div {
+                width: $g_w - 12;
+                height: $g_h - 8;
+                line-height: $g_w - 24;
+                margin: 6px auto;
+                @include g_cl();
+            }
+        }
+    }
+}
+
+.last {
+    @include position(relative,
+    0px,
+    0px);
+    i {
+        @include position(absolute,
+        8px,
+        9px);
+        @include g_cl();
+    }
+    div {
+        @include position(absolute,
+        5px,
+        10px);
+    }
+}

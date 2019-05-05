@@ -1,0 +1,31 @@
+@charset "utf-8";
+$w:100%;
+$h:100px;
+$bd:1px solid blue;
+$font:12px;
+@mixin g_margin($m_t:1px, $m_r:0, $m_b:0, $m_l:0) {
+    margin: $m_t $m_r $m_b $m_l;
+}
+
+@mixin g_bk($bk:rgba(0, 0, 0, .6)) {
+    background-color: $bk;
+}
+
+@mixin g_cl($cl:#fff) {
+    color: $cl;
+}
+
+@mixin position($po:absolute, $l:10px, $t:10px) {
+    position: $po;
+    left: $l;
+    top: $t;
+}
+
+@import 'topbanner';
+@import 'sitenav';
+@import 'header';
+@import 'nav';
+@import 'banner';
+@import 'main';
+@import 'footer';
+@import 'sidebar_b';

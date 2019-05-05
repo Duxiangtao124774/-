@@ -1,0 +1,177 @@
+ #site-nav {
+     width: $w;
+     height: $h - 68;
+     border-bottom: 1px solid #dcdcdc;
+     background-color: #fff;
+     font-size: $font;
+     color: #999;
+     .site_left {
+         float: left;
+         line-height: $h - 68;
+     }
+ }
+ 
+ .mbshop_new_headtopright {
+     float: right;
+     display: block;
+     width: auto;
+     height: 30px;
+     margin-right: 15px;
+ }
+ 
+ .mbshop_new_headtop_content {
+     float: left;
+     display: block;
+     width: auto;
+     height: 30px;
+     position: relative;
+ }
+ 
+ .mbshop_new_headtop_menu,
+ .mbshop_new_headtop_style01,
+ .new_mbshop_xlwb,
+ .new_mbshop_wxewm {
+     color: #999;
+ }
+ 
+ .mbshop_new_headtop_menu em {
+     height: 3px;
+     bottom: -3px;
+ }
+ 
+ .mbshop_new_headtop_menu em {
+     width: 80px;
+     height: 10px;
+     background-color: #fff;
+     bottom: -10px;
+     position: absolute;
+     z-index: 20;
+     left: 0;
+ }
+ 
+ .mbshop_new_headtop_box {
+     display: none;
+     position: absolute;
+     width: 80px;
+     height: auto;
+     border: 1px solid #B5B5B5;
+     background-color: #fff;
+     top: 20px;
+     -moz-box-shadow: 0 0 5px #ccc;
+     box-shadow: 0 0 5px #ccc;
+ }
+ 
+ .mbshop_new_headtop_box,
+ .mbshop_new_searchItemOption_box {
+     padding: 5px 10px 10px;
+     z-index: 5;
+ }
+ 
+ .mbshop_new_headtop_style01 {
+     float: left;
+     margin: 9px 10px 0;
+ }
+ 
+ .mbshop_new_headtop_menu {
+     width: auto;
+     height: auto;
+     padding: 9px 25px 0 10px;
+     float: left;
+     display: block;
+     background: url(//s.banggo.com/pub7/images/mbshop/veoimg/Veo_mbshop_spirit_pic.png?t=20160603) 64px -35px no-repeat #fff;
+     z-index: 10;
+     position: relative;
+     cursor: pointer;
+ }
+ 
+ .mbshop_new_headtop_menu em {
+     width: 80px;
+     height: 10px;
+     background-color: #fff;
+     bottom: -10px;
+     position: absolute;
+     z-index: 20;
+     left: 0;
+ }
+ 
+ .mbshop_new_headtop_menu em {
+     height: 3px;
+     bottom: -3px;
+ }
+ 
+ .mbshop_new_headtop_con_style_01 {
+     width: 61px;
+ }
+ 
+ .mbshop_new_headtop_box a {
+     float: left;
+     display: block;
+     width: auto;
+     clear: left;
+     margin-top: 5px;
+ }
+ 
+ .new_mbshop_xlwb,
+ .new_mbshop_wxewm {
+     width: 24px;
+     background: none;
+ }
+ 
+ .mbshop_new_headtop_con_style_02 {
+     width: 140px;
+     padding-top: 10px;
+ }
+ 
+ .new_mbshop_xlwb {
+     margin-left: 10px;
+ }
+ 
+ .new_mbshop_wxewm {
+     margin-left: 10px;
+ }
+ 
+ .new_mbshop_wxewm,
+ .new_mbshop_xlwb {
+     float: left;
+     display: block;
+     height: 17px;
+     margin-top: 9px;
+ }
+ 
+ .new_mbshop_wxewm_box {
+     top: 5px;
+ }
+ 
+ .new_mbshop_wxewm_box {
+     width: 140px;
+     height: 140px;
+     position: relative;
+     z-index: 111;
+     display: none;
+     top: 11px;
+     left: -80px;
+ }
+ 
+ .mbshop_new_headtop_content:hover .mbshop_new_headtop_box {
+     display: block!important;
+ }
+ 
+ .mbshop_new_headtop_content:hover .mbshop_new_headtop_box a {
+     color: #666
+ }
+ 
+ .mbshop_new_headtop_content:hover .mbshop_new_headtop_menu {
+     border-left: 1px #B5B5B5 solid;
+     border-right: 1px #B5B5B5 solid;
+     padding: 9px 24px 0 9px;
+     background-position: 63px -35px;
+     box-shadow: 0 0 5px #ccc;
+ }
+ 
+ a:hover a {
+     color: #666;
+ }
+ 
+ .new_mbshop_wxewm:hover .new_mbshop_wxewm_box {
+     display: block
+ }
