@@ -122,6 +122,13 @@ table {
     border-spacing: 0;
 }
 
+i,
+b,
+strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
 .hidden {
     display: none;
 }

@@ -108,7 +108,7 @@
      display: block;
      width: auto;
      clear: left;
-     margin-top: 5px;
+     margin-top: 12px;
  }
  
  .new_mbshop_xlwb,
@@ -156,7 +156,11 @@
      display: block!important;
  }
  
- .mbshop_new_headtop_content:hover .mbshop_new_headtop_box a {
+ .mbshop_new_headtop_box a {
+     color: #000
+ }
+ 
+ .mbshop_new_headtop_content:hover a {
      color: #666
  }
  
