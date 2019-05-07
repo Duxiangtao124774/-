@@ -1,0 +1,110 @@
+#footer {
+    width: $w;
+    .wrapper {
+        height: 240px;
+        margin: 53px auto 0;
+        position: relative;
+        .left {
+            float: left;
+            li {
+                float: left;
+                height: 238px;
+                border: 1px solid #dcdcdc;
+                margin-right: -1px;
+            }
+        }
+        .right {
+            width: 359px;
+            border: 1px solid #dcdcdc;
+            float: left;
+            .right-top {
+                width: 359px;
+                height: 149px;
+                border-bottom: 1px solid #dcdcdc;
+                text-align: center;
+            }
+            .right-bottom {
+                background-color: #fafafa;
+                ul {
+                    li {
+                        float: left;
+                        width: 119px;
+                        height: 88px;
+                        text-align: center;
+                        img {
+                            margin: 14px auto 8px;
+                        }
+                        p {
+                            font-weight: 800;
+                            line-height: 16px;
+                            font-size: 12px;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#guide {
+    width: $w;
+    background: url(//s.banggo.com/pub7/images/mbshop/newImg/mbshop_bottom_guide.png?t=20160603) repeat-x;
+    margin-top: 40px;
+    background-color: #fff!important;
+    .bottom-guide {
+        overflow: hidden;
+        margin: 0 auto;
+        padding-top: 11px;
+        dl {
+            width: 200px;
+            float: left;
+            dt {
+                width: auto;
+                clear: right;
+                padding-bottom: 10px;
+                margin-bottom: 5px;
+                color: #231815;
+                font-size: 14px;
+                font-weight: 700
+            }
+            dd {
+                width: 200px;
+                padding-top: 13px;
+                a {
+                    font-size: 12px;
+                    color: #231815;
+                }
+            }
+        }
+    }
+}
+
+#copyright {
+    overflow: hidden;
+    margin: 20px auto 0;
+    width: 100%;
+    padding: 20px 0 15px;
+    border-top: 1px solid #999;
+    p {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: #787878;
+    }
+    span {
+        padding-top: 15px;
+        width: 400px;
+        overflow: hidden;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        a {
+            float: left;
+            display: block
+        }
+        .left {
+            margin-left: 10px
+        }
+    }
+}

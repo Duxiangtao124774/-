@@ -6,25 +6,23 @@
         padding-top: 5px;
         height: 55px;
         overflow: hidden;
-        .logo {
-            width: 260px;
-            margin-top: 5px;
-            height: auto;
-            margin: 0;
-            padding: 0;
-            float: left;
+    }
+}
+
+.logo {
+    width: 260px;
+    margin-top: 7px;
+    height: auto;
+    float: left;
+    a {
+        width: 230px;
+        height: 55px;
+        float: left;
+        overflow: hidden;
+        img {
+            margin-top: -10px;
+            margin-left: -23px;
             display: block;
-            a {
-                width: 230px;
-                height: 55px;
-                float: left;
-                overflow: hidden;
-                img {
-                    margin-top: -10px;
-                    margin-left: -23px;
-                    display: block;
-                }
-            }
         }
     }
 }
@@ -37,7 +35,7 @@
     padding: 0;
     float: left;
     display: block;
-    margin-top: 6px;
+    margin-top: 16px;
     .search {
         width: 378px;
         margin-top: 12px;
@@ -137,6 +135,7 @@
     width: 150px;
     height: 55px;
     background: url(https://s.banggo.com/pub7/images/mbshop/veoimg/Veo_mbshop_spirit_pic.png?t=20160603) 0 -410px no-repeat;
+    margin-top: 5px;
     .content {
         width: auto;
         height: auto;

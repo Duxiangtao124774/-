@@ -1,0 +1,98 @@
+#nav {
+    width: $w;
+    height: 38px;
+    font-size: 14px;
+    line-height: 40px;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 0 0px;
+    .wrapper {
+        position: relative;
+        ul {
+            padding: 0 17px 0 0;
+            box-sizing: border-box;
+            float: left;
+            li {
+                float: left;
+                padding: 0 18px;
+            }
+        }
+    }
+}
+
+li {
+    div {
+        position: relative;
+        a {
+            color: #000;
+        }
+    }
+    .list {
+        background: #fff;
+        position: absolute;
+        z-index: 1;
+        padding: 30px 0 30px;
+        min-height: 360px;
+        box-sizing: border-box;
+        margin-left: -18px;
+        box-shadow: 0 0 5px #ccc;
+        overflow: hidden;
+        display: none;
+        div {
+            overflow: hidden;
+            float: left;
+            .content {
+                width: 110px;
+                min-height: 300px;
+                padding: 0 25px 600px;
+                margin-bottom: -600px;
+                box-sizing: border-box;
+                border-right: 1px solid #f0f0f0;
+            }
+        }
+    }
+}
+
+.content {
+    dt {
+        margin-bottom: 20px;
+        float: none;
+        text-align: center;
+        margin-left: -25px;
+        width: 110px;
+        a {
+            font-size: 20px;
+            color: #d22223;
+        }
+    }
+    a {
+        display: block;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
+
+#nav {
+    li:hover {
+        .list {
+            display: block
+        }
+    }
+    img {
+        display: block
+    }
+}
+
+.gif {
+    position: relative;
+    width: auto;
+    height: auto;
+    float: right!important;
+    padding: 0!important;
+    bottom: 7px;
+}
+
+.get-wellfare {
+    position: relative;
+    bottom: 7px;
+    left: 46px
+}

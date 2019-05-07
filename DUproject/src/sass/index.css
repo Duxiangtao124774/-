@@ -1,6 +1,6 @@
 #top_banner {
   width: 100%;
-  background-color: #ff8a00;
+  background-color: #ffbbd0;
 }
 
 #site-nav {
@@ -177,10 +177,6 @@
   box-shadow: 0 0 5px #ccc;
 }
 
-a:hover a {
-  color: #666;
-}
-
 .new_mbshop_wxewm:hover .new_mbshop_wxewm_box {
   display: block;
 }
@@ -195,22 +191,20 @@ a:hover a {
   height: 55px;
   overflow: hidden;
 }
-#header .wrapper .logo {
+
+.logo {
   width: 260px;
-  margin-top: 5px;
+  margin-top: 7px;
   height: auto;
-  margin: 0;
-  padding: 0;
   float: left;
-  display: block;
 }
-#header .wrapper .logo a {
+.logo a {
   width: 230px;
   height: 55px;
   float: left;
   overflow: hidden;
 }
-#header .wrapper .logo a img {
+.logo a img {
   margin-top: -10px;
   margin-left: -23px;
   display: block;
@@ -224,7 +218,7 @@ a:hover a {
   padding: 0;
   float: left;
   display: block;
-  margin-top: 6px;
+  margin-top: 16px;
 }
 .header-mid .search {
   width: 378px;
@@ -323,6 +317,7 @@ a:hover a {
   width: 150px;
   height: 55px;
   background: url(https://s.banggo.com/pub7/images/mbshop/veoimg/Veo_mbshop_spirit_pic.png?t=20160603) 0 -410px no-repeat;
+  margin-top: 5px;
 }
 .cart .content {
   width: auto;
@@ -344,6 +339,369 @@ a:hover a {
 .cart .content i {
   font-weight: 400;
   color: #d93938;
+}
+
+#nav {
+  width: 100%;
+  height: 38px;
+  font-size: 14px;
+  line-height: 40px;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 0 0px;
+}
+#nav .wrapper {
+  position: relative;
+}
+#nav .wrapper ul {
+  padding: 0 17px 0 0;
+  box-sizing: border-box;
+  float: left;
+}
+#nav .wrapper ul li {
+  float: left;
+  padding: 0 18px;
+}
+
+li div {
+  position: relative;
+}
+li div a {
+  color: #000;
+}
+li .list {
+  background: #fff;
+  position: absolute;
+  z-index: 1;
+  padding: 30px 0 30px;
+  min-height: 360px;
+  box-sizing: border-box;
+  margin-left: -18px;
+  box-shadow: 0 0 5px #ccc;
+  overflow: hidden;
+  display: none;
+}
+li .list div {
+  overflow: hidden;
+  float: left;
+}
+li .list div .content {
+  width: 110px;
+  min-height: 300px;
+  padding: 0 25px 600px;
+  margin-bottom: -600px;
+  box-sizing: border-box;
+  border-right: 1px solid #f0f0f0;
+}
+
+.content dt {
+  margin-bottom: 20px;
+  float: none;
+  text-align: center;
+  margin-left: -25px;
+  width: 110px;
+}
+.content dt a {
+  font-size: 20px;
+  color: #d22223;
+}
+.content a {
+  display: block;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#nav li:hover .list {
+  display: block;
+}
+#nav img {
+  display: block;
+}
+
+.gif {
+  position: relative;
+  width: auto;
+  height: auto;
+  float: right !important;
+  padding: 0 !important;
+  bottom: 7px;
+}
+
+.get-wellfare {
+  position: relative;
+  bottom: 7px;
+  left: 46px;
+}
+
+#banner {
+  width: 100%;
+  overflow: hidden;
+  height: 750px;
+  border-top: 1px solid #f0f0f0;
+}
+#banner .wrapper {
+  width: auto;
+  height: 750px;
+  background-color: #fff;
+  position: relative;
+}
+#banner .wrapper .banner-box {
+  width: 100%;
+}
+
+.banner-pic {
+  height: 600px;
+}
+.banner-pic li {
+  height: 600px;
+  width: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.banner-pic .l1 {
+  background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_01.jpg") center center/1920px no-repeat;
+}
+.banner-pic .l2 {
+  background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_02.jpg") center center/1920px no-repeat;
+}
+.banner-pic .l3 {
+  background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_03.jpg") center center/1920px no-repeat;
+}
+.banner-pic .l4 {
+  background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190425lb_03.jpg") center center/1920px no-repeat;
+}
+.banner-pic .l5 {
+  background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_04.jpg") center center/1920px no-repeat;
+}
+
+.small-pic {
+  background: #fff;
+}
+.small-pic .pic-content {
+  padding: 10px 28px;
+}
+.small-pic .pic-content ul li {
+  float: left;
+  width: 220px;
+  height: 110px;
+  margin: 20px 0;
+  padding: 0 10px;
+  border-right: 1px solid #f0f0f0;
+}
+
+#main {
+  width: 100%;
+}
+#main .first-content ul {
+  overflow: hidden;
+}
+#main .first-content ul li {
+  float: left;
+}
+#main .shop li {
+  float: left;
+  width: 230px;
+  height: 325px;
+  margin: 0 5px;
+}
+#main .shop li .pic img {
+  width: 230px;
+  height: 230px;
+}
+#main .shop li .word {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#main .shop li .word .discout {
+  float: right;
+  width: 40px;
+  height: 18px;
+  line-height: 18px;
+  border: 1px solid #f8584f;
+  text-align: center;
+  color: #f8584f;
+  background: #fdedec;
+  font-size: 12px;
+}
+#main .shop li .word .name {
+  font-size: 14px;
+  color: #919191;
+  display: block;
+}
+#main .shop li .word .discrip {
+  width: 200px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #222;
+  display: block;
+  overflow: hidden;
+}
+#main .shop li .word .price {
+  margin-top: 8px;
+  margin-right: 16px;
+}
+#main .shop li .word .price b {
+  font-size: 14px;
+  color: #f8584f;
+  display: inline-block;
+  margin-right: 5px;
+  font-weight: 800;
+}
+#main .shop li .word .price i {
+  font-size: 12px;
+  color: #919191;
+  text-decoration: line-through;
+}
+#main .shop .big-pic {
+  width: 470px;
+}
+
+.man-clothes .title {
+  font-size: 0 !important;
+}
+.man-clothes .title img {
+  border: 0;
+}
+
+.woman-clothes .title {
+  font-size: 0 !important;
+}
+.woman-clothes .title img {
+  border: 0;
+}
+
+#footer {
+  width: 100%;
+}
+#footer .wrapper {
+  height: 240px;
+  margin: 53px auto 0;
+  position: relative;
+}
+#footer .wrapper .left {
+  float: left;
+}
+#footer .wrapper .left li {
+  float: left;
+  height: 238px;
+  border: 1px solid #dcdcdc;
+  margin-right: -1px;
+}
+#footer .wrapper .right {
+  width: 359px;
+  border: 1px solid #dcdcdc;
+  float: left;
+}
+#footer .wrapper .right .right-top {
+  width: 359px;
+  height: 149px;
+  border-bottom: 1px solid #dcdcdc;
+  text-align: center;
+}
+#footer .wrapper .right .right-bottom {
+  background-color: #fafafa;
+}
+#footer .wrapper .right .right-bottom ul li {
+  float: left;
+  width: 119px;
+  height: 88px;
+  text-align: center;
+}
+#footer .wrapper .right .right-bottom ul li img {
+  margin: 14px auto 8px;
+}
+#footer .wrapper .right .right-bottom ul li p {
+  font-weight: 800;
+  line-height: 16px;
+  font-size: 12px;
+  color: #999;
+}
+
+#guide {
+  width: 100%;
+  background: url(//s.banggo.com/pub7/images/mbshop/newImg/mbshop_bottom_guide.png?t=20160603) repeat-x;
+  margin-top: 40px;
+  background-color: #fff !important;
+}
+#guide .bottom-guide {
+  overflow: hidden;
+  margin: 0 auto;
+  padding-top: 11px;
+}
+#guide .bottom-guide dl {
+  width: 200px;
+  float: left;
+}
+#guide .bottom-guide dl dt {
+  width: auto;
+  clear: right;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: #231815;
+  font-size: 14px;
+  font-weight: 700;
+}
+#guide .bottom-guide dl dd {
+  width: 200px;
+  padding-top: 13px;
+}
+#guide .bottom-guide dl dd a {
+  font-size: 12px;
+  color: #231815;
+}
+
+#copyright {
+  overflow: hidden;
+  margin: 20px auto 0;
+  width: 100%;
+  padding: 20px 0 15px;
+  border-top: 1px solid #999;
+}
+#copyright p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #787878;
+}
+#copyright span {
+  padding-top: 15px;
+  width: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+#copyright span a {
+  float: left;
+  display: block;
+}
+#copyright span .left {
+  margin-left: 10px;
+}
+
+#sidebar_b {
+  width: 60px;
+  height: auto;
+  position: fixed;
+  right: 0;
+  bottom: 30px;
+}
+#sidebar_b .returntop {
+  width: 55px;
+  height: 90px;
+  float: left;
+  margin-bottom: 10px;
+  background: url(//s.banggo.com/pub7/images/mbshop/veoimg/Veo_mbshop_spirit_pic.png?t=20160603) 0 -1060px no-repeat;
+}
+#sidebar_b .service {
+  width: 55px;
+  height: 55px;
+  float: left;
+  background: url(//s.banggo.com/pub7/images/mbshop/common/online_service.png?t=20160603) no-repeat;
 }
 
 /*# sourceMappingURL=index.css.map */

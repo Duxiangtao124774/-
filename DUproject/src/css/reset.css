@@ -141,6 +141,11 @@ strong {
     margin: 0 auto;
 }
 
+.r-wrapper {
+    width: 980px;
+    margin: 0 auto;
+}
+
 
 /* 清除浮动 */
 

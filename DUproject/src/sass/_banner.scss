@@ -1,0 +1,59 @@
+#banner {
+    width: $w;
+    overflow: hidden;
+    height: 750px;
+    border-top: 1px solid #f0f0f0;
+    .wrapper {
+        width: auto;
+        height: 750px;
+        background-color: #fff;
+        position: relative;
+        .banner-box {
+            width: $w;
+        }
+    }
+}
+
+.banner-pic {
+    height: 600px;
+    li {
+        height: 600px;
+        width: 100%;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .l1 {
+        background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_01.jpg") center center / 1920px no-repeat;
+    }
+    .l2 {
+        background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_02.jpg") center center / 1920px no-repeat;
+    }
+    .l3 {
+        background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_03.jpg") center center / 1920px no-repeat;
+    }
+    .l4 {
+        background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190425lb_03.jpg") center center / 1920px no-repeat;
+    }
+    .l5 {
+        background: url("https://img.banggo.com/sources/cms/banggo2017/PC/pc_190502lb_04.jpg") center center / 1920px no-repeat;
+    }
+}
+
+.small-pic {
+    background: #fff;
+    .pic-content {
+        padding: 10px 28px;
+        ul {
+            li {
+                float: left;
+                width: 220px;
+                height: 110px;
+                margin: 20px 0;
+                padding: 0 10px;
+                border-right: 1px solid #f0f0f0;
+            }
+        }
+    }
+}

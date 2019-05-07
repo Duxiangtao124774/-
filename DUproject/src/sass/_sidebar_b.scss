@@ -1,0 +1,20 @@
+#sidebar_b {
+    width: 60px;
+    height: auto;
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    .returntop {
+        width: 55px;
+        height: 90px;
+        float: left;
+        margin-bottom: 10px;
+        background: url(//s.banggo.com/pub7/images/mbshop/veoimg/Veo_mbshop_spirit_pic.png?t=20160603) 0 -1060px no-repeat;
+    }
+    .service {
+        width: 55px;
+        height: 55px;
+        float: left;
+        background: url(//s.banggo.com/pub7/images/mbshop/common/online_service.png?t=20160603) no-repeat;
+    }
+}

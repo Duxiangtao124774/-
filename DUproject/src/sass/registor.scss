@@ -1,0 +1,98 @@
+@charset "utf-8";
+.lf {
+    float: left;
+}
+
+#header {
+    width: 100%;
+    h1 {
+        width: 220px;
+        height: 100px;
+        a {
+            display: block
+        }
+    }
+}
+
+.zc {
+    .title {
+        border-bottom: 2px solid #6E6E6E;
+        a {
+            display: block;
+            height: 26px;
+            padding-left: 46px;
+            font-weight: bold;
+            line-height: 26px;
+            color: #FFF;
+            font-size: 14px;
+            background: url(https://passport.banggo.com/CASServer/themes/banggo/images/buttonSkin.png) 0 -450px no-repeat;
+        }
+    }
+    .content {
+        margin-top: 10px;
+        border: 1px solid #CCC;
+        .left {
+            padding-top: 20px;
+            float: left;
+            width: 743px;
+            padding-left: 15px;
+            padding-bottom: 30px;
+            overflow: hidden;
+            background: url(https://passport.banggo.com/CASServer/themes/banggo/images/banggo/repeatYSkin.png) right 0 repeat-y;
+            .left-title {
+                width: 700px;
+                font-size: 14px;
+                text-indent: 20px;
+                line-height: 30px;
+                margin-left: 15px;
+                color: #333;
+                border-bottom: 1px dotted #E6E6E6;
+            }
+            form {
+                p {
+                    margin-left: 126px;
+                    font-size: 12px;
+                    color: #ff0000
+                }
+                .item {
+                    width: 700px;
+                    padding-top: 10px;
+                    overflow: hidden;
+                    .text {
+                        width: 120px;
+                        line-height: 30px;
+                        font-size: 14px;
+                        color: #666;
+                        text-align: right;
+                    }
+                    .input {
+                        .bd {
+                            width: 5px;
+                            height: 30px;
+                            overflow: hidden;
+                            background: url(https://passport.banggo.com/CASServer/themes/banggo/images/iconSkin.png) 0 -650px no-repeat;
+                        }
+                        input {
+                            border: 1px solid #ABABAB;
+                            width: 240px;
+                            height: 28px;
+                            line-height: 28px;
+                            padding: 0 5px 0 0;
+                            margin: 0 10px 0 0;
+                        }
+                        .tips {
+                            width: 305px;
+                            margin-top: -2px;
+                            display: inline-block;
+                            color: #999;
+                            font-size: 12px
+                        }
+                    }
+                }
+                .first {
+                    margin-top: 15px
+                }
+            }
+        }
+    }
+}
