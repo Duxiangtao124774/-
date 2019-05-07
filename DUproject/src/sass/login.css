@@ -1,0 +1,226 @@
+.lf {
+  float: left;
+}
+
+#header {
+  width: 100%;
+}
+#header h1 {
+  width: 220px;
+  height: 100px;
+}
+#header h1 a {
+  display: block;
+}
+
+.login {
+  width: 100%;
+  margin-top: 25px;
+  overflow: hidden;
+}
+.login .right {
+  width: 340px;
+}
+.login .right .tab {
+  height: 40px;
+  position: relative;
+}
+.login .right .tab h3 {
+  color: #666;
+  height: 36px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 36px;
+  text-align: center;
+  position: absolute;
+  border: 1px solid #CCC;
+  background-color: #FFF;
+}
+.login .right .tab .t1 {
+  width: 108px;
+  left: 0;
+}
+.login .right .tab .t2 {
+  width: 108px;
+  left: 109px;
+}
+.login .right .tab .t3 {
+  width: 120px;
+  left: 218px;
+}
+.login .right .tab .active {
+  top: 0px;
+  padding-top: 3px;
+  border-top: 2px solid #c00;
+  border-bottom: none;
+}
+.login .right .content {
+  width: 338px;
+  border: 1px solid #CCC;
+  border-top: none;
+  padding-top: 1px;
+  margin-top: -1px;
+}
+.login .right .content .form {
+  height: 278px;
+}
+.login .right .content .form .first {
+  margin-top: 30px;
+}
+.login .right .content .form .item {
+  overflow: hidden;
+}
+.login .right .content .form .item .text {
+  width: 80px;
+  color: #666;
+  line-height: 28px;
+  font-size: 14px;
+  text-align: right;
+}
+.login .right .content .form .item .input input {
+  border: 1px solid #CCC;
+  width: 220px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 5px;
+  margin: 0 10px 0 0;
+}
+.login .right .content .form .item .input .third-input {
+  width: 50px;
+}
+.login .right .content .form .item .input span a {
+  color: #333;
+  font-size: 12px;
+}
+.login .right .content .form .item .tips-wrap {
+  padding-left: 80px;
+  height: 22px;
+}
+.login .right .content .form .item .tips-wrap .tips {
+  height: 22px;
+  line-height: 22px;
+  display: none;
+  color: #999;
+  font-size: 12px;
+}
+
+label {
+  font-size: 12px;
+}
+
+.btn-wrapper {
+  margin-top: 10px;
+}
+.btn-wrapper .btn {
+  text-indent: -1111px;
+  background-position: 0 0;
+  display: inline-block;
+  width: 104px;
+  height: 34px;
+  line-height: 34px;
+  cursor: pointer;
+  background-image: url(https://passport.banggo.com/CASServer/themes/banggo/images/buttons.png);
+  background-repeat: no-repeat;
+}
+.btn-wrapper .fpassword {
+  text-decoration: underline;
+  font-size: 12px;
+  color: #333;
+}
+
+.bottom {
+  width: 318px;
+  text-align: center;
+  padding: 15px 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid #F1F1F1;
+  overflow: hidden;
+  zoom: 1;
+}
+.bottom .info {
+  line-height: 27px;
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 12px;
+}
+.bottom .free {
+  background-position: 0 -699px;
+  display: inline-block;
+  height: 27px;
+  line-height: 27px;
+  padding: 0 0 0 15px;
+  margin: 0;
+  cursor: pointer;
+  color: #404040;
+  background-image: url(https://passport.banggo.com/CASServer/themes/banggo/images/buttons.png);
+  background-repeat: no-repeat;
+  font-size: 12px;
+}
+.bottom .free span {
+  line-height: 27px;
+  display: inline-block;
+  background-position: right -643px;
+  height: 27px;
+  line-height: 27px;
+  padding: 0 15px 0 0;
+  margin: 0;
+  cursor: pointer;
+  background-image: url(https://passport.banggo.com/CASServer/themes/banggo/images/buttons.png);
+  background-repeat: no-repeat;
+  font-size: 12px;
+}
+
+.surport {
+  border: 1px solid #efefef;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 300px;
+}
+.surport h4 {
+  background: #efefef;
+  margin: 0;
+  line-height: 32px;
+  padding: 0 8px;
+  font-weight: normal;
+  font-size: 12px;
+}
+.surport p {
+  margin: 0;
+  overflow: hidden;
+  color: #999;
+}
+.surport p a {
+  background: #FFF url(https://passport.banggo.com/CASServer/themes/banggo/images/icon_login.png) -9999px -9999px no-repeat;
+  border: 1px solid #efefef;
+  margin: -1px;
+  display: block;
+  float: left;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-indent: 38px;
+  color: #333;
+  font-size: 12px;
+}
+.surport p .qq {
+  background-position: 7px -6px;
+}
+.surport p .zfb {
+  background-position: 7px -56px;
+}
+.surport p .wx {
+  background-position: 7px -101px;
+}
+
+#footer {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
+}
+#footer a {
+  color: #333;
+}
+
+/*# sourceMappingURL=login.css.map */

@@ -31,6 +31,7 @@
   border: 1px solid #CCC;
 }
 .zc .content .left {
+  position: relative;
   padding-top: 20px;
   float: left;
   width: 743px;
@@ -49,13 +50,15 @@
   border-bottom: 1px dotted #E6E6E6;
 }
 .zc .content .left form p {
-  margin-left: 126px;
+  position: absolute;
   font-size: 12px;
   color: #ff0000;
+  left: 137px;
+  display: none;
 }
 .zc .content .left form .item {
   width: 700px;
-  padding-top: 10px;
+  padding-top: 25px;
   overflow: hidden;
 }
 .zc .content .left form .item .text {
@@ -78,6 +81,12 @@
   line-height: 28px;
   padding: 0 5px 0 0;
   margin: 0 10px 0 0;
+  background-position: 0 -700px;
+  background-repeat: repeat-x;
+  background-image: url(https://passport.banggo.com/CASServer/themes/banggo/images/banggo/iconSkin.png);
+}
+.zc .content .left form .item .input .third-input {
+  width: 128px;
 }
 .zc .content .left form .item .input .tips {
   width: 305px;
@@ -86,8 +95,42 @@
   color: #999;
   font-size: 12px;
 }
-.zc .content .left form .first {
-  margin-top: 15px;
+
+.third .tips a {
+  color: #333;
+}
+
+.btn {
+  background-position: -226px -168px;
+  display: inline-block;
+  width: 152px;
+  height: 34px;
+  line-height: 34px;
+  background-image: url(https://passport.banggo.com/CASServer/themes/banggo/images/buttons.png);
+  background-repeat: no-repeat;
+}
+.btn span {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.right {
+  width: 219px;
+}
+.right .index {
+  width: 219px;
+  height: 320px;
+  text-indent: -999999px;
+  background: url(https://passport.banggo.com/CASServer/themes/banggo/images/banggo/bgowelcometext.png) 0 0 no-repeat;
+}
+
+#footer {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
+}
+#footer a {
+  color: #333;
 }
 
 /*# sourceMappingURL=registor.css.map */
