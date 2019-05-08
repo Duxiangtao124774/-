@@ -462,6 +462,7 @@ strong {
   margin-right: 50px;
 }
 #main .wrapper .content .spic .sf {
+  display: none;
   width: 230.4px;
   height: 230.4px;
   position: absolute;
@@ -490,7 +491,7 @@ strong {
   z-index: 9999;
   display: none;
 }
-#main .wrapper .content .bf img {
+#main .wrapper .content .bf .bpic {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -518,6 +519,9 @@ strong {
 #main .wrapper .content .smallpic ul li img {
   width: 78px;
   height: 78px;
+}
+#main .wrapper .content .smallpic ul li:hover li {
+  border: 1px solid #F8584F;
 }
 #main .wrapper .content .smallpic ul .active {
   border: 1px solid #F8584F;

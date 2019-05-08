@@ -488,6 +488,7 @@ li .list div .content {
   margin: 20px 0;
   padding: 0 10px;
   border-right: 1px solid #f0f0f0;
+  opacity: 0.6;
 }
 
 #main {
@@ -503,7 +504,7 @@ li .list div .content {
   float: left;
   width: 230px;
   height: 325px;
-  margin: 0 5px;
+  margin: 5px 5px;
 }
 #main .shop li .pic img {
   width: 230px;
