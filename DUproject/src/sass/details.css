@@ -463,8 +463,8 @@ strong {
 }
 #main .wrapper .content .spic .sf {
   display: none;
-  width: 230.4px;
-  height: 230.4px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   z-index: 2;
   background-color: #fff;

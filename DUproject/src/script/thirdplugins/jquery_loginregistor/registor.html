@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				font-size: 12px;
+				font-family: "微软雅黑";
+			}
+			fieldset{
+				width: 600px;
+				margin: 0 auto;
+			}
+			.fwidth{
+				width: 70px;
+				float: left;
+			}
+			.error{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<legend>用户注册</legend>
+			<form action="reg.php" method="post" id="form1">
+				<p>
+					<label class="fwidth" for="username">用户名：</label>
+					<input type="text" name="username" id="username"/>
+					<!--<span>(必填，3-15字符长度，支持汉字、字母、数字及_)</span>-->
+					<label id="username-error" class="error" for="username">(必填，3-15字符长度，支持汉字、字母、数字及_)</label>
+				</p>
+				<p>
+					<label class="fwidth" for="password">密码：</label>
+					<input type="password" name="password" id="password"/>
+					<label id="password-error" class="error" for="password">(必填，不得少于6位)</label>
+				</p>
+				<p>
+					<label class="fwidth" for="repass">密码重复：</label>
+					<input type="password" name="repass" id="repass"/>
+					<label id="repass-error" class="error" for="repass">(必填，不得少于6位)</label>
+				</p>
+				<p>
+					<label class="fwidth" for="email">邮箱：</label>
+					<input type="text" name="email" id="email"/>
+					<label id="email-error" class="error" for="email">(必填)</label>
+				</p>
+				<p>
+					<input type="submit" value="注册" name="submit" />
+				</p>
+			</form>
+		</fieldset>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//表单验证-用户名
+			$(function(){
+				$('#form1').validate({
+					rules:{
+						username:{
+							required:true,
+							minlength:2,
+							maxlength:10,
+							remote: {//将前端的name给后端
+							    url: "reg.php",     //后台处理程序
+							    type: "post"               //数据发送方式
+							}
+						},
+						password:{
+							required:true,
+							minlength:6
+						},
+						repass:{
+							required:true,
+							equalTo:'#password'
+						},
+						email:{
+							required:true,
+							email:true
+						}
+					},
+					messages:{
+						username:{
+							required:'用户名不能为空',
+							minlength:'用户名不能小于2',
+							maxlength:'用户名不能大于10',
+							remote:'用户名已存在'
+						},
+						password:{
+							required:'密码不能为空'
+						},
+						repass:{
+							required:'密码重复不能为空'
+						},
+						email:{
+							required:'电子邮箱不能为空',
+							email:'你输入的格式有误'
+						}
+					}
+					
+				});
+			});
+			
+			$.validator.setDefaults({
+			    /*添加校验成功后的执行函数--修改提示内容，并为正确提示信息添加新的样式(默认是valid)*/
+			    success: function(label){
+			        label.text('√').css('color','green').addClass('valid');
+			    }
+			});
+		</script>
+	</body>
+</html>

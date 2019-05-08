@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+	<body>
+		<form id="signupForm" method="post" action="http://www.baidu.com">
+			<p>
+				<label for="firstname">用户名：</label>
+				<input id="firstname" name="firstname" />
+			</p>
+			<p>
+				<label for="email">电子邮箱：</label>
+				<input id="email" name="email" />
+			</p>
+			<p>
+				<label for="tel">电话号码：</label>
+				<input id="tel" name="tel" />
+			</p>
+			<p>
+				<label for="password">密码：</label>
+				<input id="password" name="password" type="password" />
+			</p>
+			<p>
+				<label for="confirm_password">确认密码</label>
+				<input id="confirm_password" name="confirm_password" type="password" />
+			</p>
+			<p>
+				<input class="submit" type="submit" value="提交" />
+			</p>
+		</form>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#signupForm").validate({
+					rules: {//匹配的规则
+						firstname: {//验证用户名
+							required:true,
+							rangelength:[5,10]
+						},
+						email:{
+							required:true,
+							email:true
+						},
+						tel:{
+							required:true,
+							digits:true,
+							rangelength:[11,11]  
+						},
+						password:{
+							required:true,
+							rangelength:[6,20]
+						},
+						confirm_password:{
+							required: true,
+							equalTo: "#password"//值和密码框的值相同
+						}
+					},
+					messages: {//输出提示
+						firstname:{
+							required: "请输入用户名",
+							rangelength:"输入长度必须介于 5 和 10 之间的字符串"
+						},
+						email:{
+							required: "请输入Email地址",
+							email: "请输入正确的email地址"
+						},
+						tel:{
+							required:"请输入手机号码",
+							digits:"必须是整数",
+							rangelength:"号码有误" 
+						},
+						password:{
+							required:"请输入密码",
+							rangelength:"密码长度必须介于6 到 20位之间"
+						},
+						confirm_password:{
+							required: "请输入确认密码",
+							equalTo: "两次密码输入不一致"//值和密码框的值相同
+						}
+					}
+				});
+			});
+			$.validator.setDefaults({
+				/*添加校验成功后的执行函数--修改提示内容，并为正确提示信息添加新的样式(默认是valid)*/
+				success: function(label){
+					label.text('√').css('color','green').addClass('valid');
+				}
+			});
+		</script>
+	</body>
+</html>

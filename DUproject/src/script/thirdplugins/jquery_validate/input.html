@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="http://www.softwhy.com/" />
+		<title>蚂蚁部落</title>
+		<style>
+			ul li {
+				list-style: none;
+				margin-top: 5px;
+			}
+			
+			label.success {
+				color: green;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script src="http://www.softwhy.com/demo/jQuery/js/jquery.validate.js"></script>
+		<script src="http://www.softwhy.com/demo/jQuery/js/messages_zh.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#myform").validate({
+					success: function(succ, element) {
+						if(element.name == "username") {
+							succ.text("你的名字真好听").addClass("success");
+						} else if(element.name == "pw") {
+							succ.text("你的密码真安全").addClass("success");
+						} else {
+							succ.text("邮箱是正确的").addClass("success");
+						}
+					},
+					rules: {
+						username: "required",
+						pw: "required",
+						email: "required"
+					},
+					messages: {
+						name: "用户名是必填项目",
+						pw: "密码是必填项目",
+						email: {
+							required: "邮箱是必填项目",
+							email: "邮箱格式不正确"
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<form id="myform">
+			<ul>
+				<li>姓名:<input type="text" name="username" /></li>
+				<li>密码:<input type="password" name="pw" /></li>
+				<li>邮箱:<input type="text" name="email" /></li>
+				<li>
+					<input type="submit" value="提交" />
+					<input type="reset" value="重置" />
+				</li>
+			</ul>
+		</form>
+	</body>
+
+</html>
