@@ -1,4 +1,4 @@
-! function() {
+! function($) {
     //1.渲染商品列表, 传入两个参数，一个id和数量，根据id和数量渲染整个可见的列表.
     function goodslist(id, count) {
         $.ajax({
@@ -7,103 +7,92 @@
         }).done(function(data) {
             $.each(data, function(index, value) {
                 if (id == value.sid) { //遍历判断sid和传入的sid是否相同，方便将那条数据设置到渲染的商品列表中。
-                    var $clonebox = $('.goods-item:hidden').clone(true, true);
-                    $clonebox.find('.goods-pic').find('img').attr('src', value.url);
-                    $clonebox.find('.goods-pic').find('img').attr('sid', value.sid);
-                    $clonebox.find('.goods-d-info').find('a').html(value.titile);
-                    $clonebox.find('.b-price').find('strong').html(value.price);
-                    $clonebox.find('.quantity-form').find('input').val(count);
+
+                    $('.product-wrapper').find('.li2').find('img').attr('src', value.indexpic);
+                    $('.product-wrapper').find('.li2').find('img').attr('sid', value.sid);
+                    $('.product-wrapper').find('.li2').find('p').html(value.name + value.discrip);
+                    $('.product-wrapper').find('.li4').find('em').html(value.price);
+                    $('.product-wrapper').find('.li5').find('input').val(count);
                     //计算每个商品的价格。
-                    $clonebox.find('.b-sum').find('strong').html((value.price * count).toFixed(2));
-                    $clonebox.css('display', 'block');
-                    $('.item-list').append($clonebox);
+                    $('.product-wrapper').find('.li6').html((value.price * count).toFixed(2));
+
+                    $('.product').append($('.product-wrapper'));
                     priceall(); //计算总价的
                 }
             });
         })
     }
     //2.获取cookie，执行渲染列表的函数
-    if (getcookie('cookiesid') && getcookie('cookienum')) {
-        var s = getcookie('cookiesid').split(','); //数组sid
-        var n = getcookie('cookienum').split(','); //数组num
+    if ($.cookie('sid') && $.cookie('num')) {
+        var s = $.cookie('sid').split(','); //数组sid
+        var n = $.cookie('num').split(','); //数组num
         $.each(s, function(i, value) {
             goodslist(s[i], n[i]);
         });
-    }
-
-    //3.如果购物车为空，显示empty-cart盒子(购物车空空的)
-    kong();
-
-    function kong() {
-        if (getcookie('cookiesid') && getcookie('cookienum')) {
-            $('.empty-cart').hide(); //cookie存在，购物车有商品，隐藏盒子。
-        } else {
-            $('.empty-cart').show();
-        }
     }
 
     //4.计算总价和总的商品件数，必须是选中的商品。
     function priceall() {
         var $sum = 0;
         var $count = 0;
-        $('.goods-item:visible').each(function(index, element) {
-            if ($(element).find('.cart-checkbox input').prop('checked')) {
-                $sum += parseInt($(element).find('.quantity-form').find('input').val());
-                $count += parseFloat($(element).find('.b-sum').find('strong').html());
+        $('.product-wrapper').each(function(index, element) {
+            if ($(element).find('label input').prop('checked')) {
+                $sum += parseInt($(element).find('.li5').find('input').val());
+                $count += parseFloat($(element).find('.li6').html());
             }
         });
 
-        $('.amount-sum').find('em').html($sum);
-        $('.totalprice').html('￥' + $count.toFixed(2));
+        $('.p5').find('em').html($sum);
+        $('.p4').html('￥' + $count.toFixed(2));
     }
 
     //5.全选操作
-    $('.allsel').on('change', function() {
-        $('.goods-item:visible').find(':checkbox').prop('checked', $(this).prop('checked'));
-        $('.allsel').prop('checked', $(this).prop('checked'));
+    $('.allselect').on('change', function() {
+        $('.product-wrapper').find(':checkbox').prop('checked', $(this).prop('checked'));
+        $('.allselect').prop('checked', $(this).prop('checked'));
         priceall(); //取消选项，重算总和。
     });
 
-    var $inputs = $('.goods-item:visible').find(':checkbox');
-    $('.item-list').on('change', $inputs, function() { //事件的委托的this指向被委托的元素
-        if ($('.goods-item:visible').find('input:checkbox').length == $('.goods-item:visible').find('input:checked').size()) {
-            $('.allsel').prop('checked', true);
+    var $inputs = $('.product-wrapper').find(':checkbox');
+    $('.product').on('change', $inputs, function() { //事件的委托的this指向被委托的元素
+        if ($('.product-wrapper').find('input:checkbox').length == $('.product-wrapper').find('input:checked').size()) {
+            $('.allselect').prop('checked', true);
         } else {
-            $('.allsel').prop('checked', false);
+            $('.allselect').prop('checked', false);
         }
         priceall(); //取消选项，重算总和。
     });
 
     //6.数量的改变
     //改变商品数量++
-    $('.quantity-add').on('click', function() {
-        var $count = $(this).parents('.goods-item').find('.quantity-form input').val(); //值
+    $('.add').on('click', function() {
+        var $count = $(this).parents('.product-wrapper').find('.li5 input').val(); //值
         $count++;
         if ($count >= 99) {
             $count = 99;
         }
-        $(this).parents('.goods-item').find('.quantity-form input').val($count); //赋值回去
-        $(this).parents('.goods-item').find('.b-sum').find('strong').html(singlegoodsprice($(this))); //改变后的价格
+        $(this).parents('.product-wrapper').find('.li5 input').val($count); //赋值回去
+        $(this).parents('.product-wrapper').find('.li6').html(singlegoodsprice($(this))); //改变后的价格
         priceall(); //重新计算总和。
-        setcookie($(this)); //将改变的数量重新添加到cookie
+        $.cookie($(this)); //将改变的数量重新添加到cookie
 
     });
 
     //改变商品数量--
-    $('.quantity-down').on('click', function() {
-        var $count = $(this).parents('.goods-item').find('.quantity-form input').val();
+    $('.decrease').on('click', function() {
+        var $count = $(this).parents('.product-wrapper').find('.li5 input').val();
         $count--;
         if ($count <= 1) {
             $count = 1;
         }
-        $(this).parents('.goods-item').find('.quantity-form input').val($count);
-        $(this).parents('.goods-item').find('.b-sum').find('strong').html(singlegoodsprice($(this))); //改变后的价格
+        $(this).parents('.product-wrapper').find('.li5 input').val($count);
+        $(this).parents('.product-wrapper').find('.li6').html(singlegoodsprice($(this))); //改变后的价格
         priceall();
-        setcookie($(this));
+        $.cookie($(this));
     });
 
     //直接输入改变数量
-    $('.quantity-form input').on('input', function() {
+    $('.li5 input').on('input', function() {
         var $reg = /^\d+$/g; //只能输入数字
         var $value = parseInt($(this).val());
         if ($reg.test($value)) { //是数字
@@ -117,15 +106,15 @@
         } else { //不是数字
             $(this).val(1);
         }
-        $(this).parents('.goods-item').find('.b-sum').find('strong').html(singlegoodsprice($(this))); //改变后的价格
+        $(this).parents('.product-wrapper').find('.li6').html(singlegoodsprice($(this))); //改变后的价格
         priceall();
-        setcookie($(this));
+        $.cookie($(this));
     });
 
     //7.计算数量改变后单个商品的价格
     function singlegoodsprice(obj) { //obj:当前元素
-        var $dj = parseFloat(obj.parents('.goods-item').find('.b-price').find('strong').html()); //单价
-        var $cnum = parseInt(obj.parents('.goods-item').find('.quantity-form input').val()); //数量
+        var $dj = parseFloat(obj.parents('.product-wrapper').find('.li4').find('em').html()); //单价
+        var $cnum = parseInt(obj.parents('.product-wrapper').find('.li5 input').val()); //数量
         return ($dj * $cnum).toFixed(2); //结果
     }
 
@@ -135,17 +124,17 @@
     var arrnum = []; //商品的数量
     //提前获取cookie里面id和num
     function cookietoarray() {
-        if (getcookie('cookiesid') && getcookie('cookienum')) {
-            arrsid = getcookie('cookiesid').split(','); //cookie商品的sid  
-            arrnum = getcookie('cookienum').split(','); //cookie商品的num
+        if ($.cookie('sid') && $.cookie('num')) {
+            arrsid = $.cookie('sid').split(','); //cookie商品的sid  
+            arrnum = $.cookie('num').split(','); //cookie商品的num
         }
     }
 
     function setcookie(obj) { //obj:当前操作的对象
         cookietoarray(); //得到数组
-        var $index = obj.parents('.goods-item').find('img').attr('sid'); //通过id找数量的位置
-        arrnum[$.inArray($index, arrsid)] = obj.parents('.goods-item').find('.quantity-form input').val();
-        addcookie('cookienum', arrnum.toString(), 7);
+        var $index = obj.parents('.product-wrapper').find('img').attr('sid'); //通过id找数量的位置
+        arrnum[$.inArray($index, arrsid)] = obj.parents('.product-wrapper').find('.li5 input').val();
+        $.cookie('num', arrnum, 7);
     }
 
     //9.删除操作
@@ -159,8 +148,8 @@
         });
         arrsid.splice($index, 1); //删除数组对应的值
         arrnum.splice($index, 1); //删除数组对应的值
-        addcookie('cookiesid', arrsid.toString(), 7); //添加cookie
-        addcookie('cookienum', arrnum.toString(), 7); //添加cookie
+        addcookie('cookiesid', arrsid, 7); //添加cookie
+        addcookie('cookienum', arrnum, 7); //添加cookie
     }
 
     //删除单个商品的函数(委托)
@@ -189,4 +178,4 @@
     });
 
 
-}();
+}(jQuery);

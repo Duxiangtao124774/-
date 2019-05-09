@@ -1,7 +1,7 @@
 ; //渲染详情页数据
 (function($) {
     var $sid = location.search.substr(5);
-    console.log($sid)
+    // console.log($sid)
     $.ajax({
         url: 'http://10.31.163.147:1247/duxiangtao/-dxt/DUproject/php/detail.php',
         data: {
@@ -10,9 +10,9 @@
         dataType: 'json',
         success: function(data) {
             // 察看后端返回的数据
-            console.log(data)
+            // console.log(data)
             var $listarr = data.spiclist.split('&');
-            console.log($listarr) //spiclist小图标的地址
+            // console.log($listarr) //spiclist小图标的地址
             var $listStr = '';
             $('.spic').find('.spic-pic').attr('src', data.bpic).attr('sid', data.sid);
             $('.bf').find('img').attr('src', data.bpic);
@@ -114,14 +114,18 @@
     class Ruturndata {
         constructor() {
             this.btn = $('.shop-bag a');
-            this.arrsid = [];
-            this.arrnum = [];
+            this.dataObj = {};
             this.input = $('.buy .num');
             this.num = 0;
+            this.btn = $('.shop-bag a');
             this.btnleft = $('.buy .jian');
             this.btnright = $('.buy .jia');
+            this.arrsid = [];
+            this.arrnum = [];
+            this.cartnum = $('.cart a i');
         }
         init() {
+            // alert($('.cart a i').size()) //1
             var _this = this;
             this.btnleft.on('click', function() {
                 _this.left();
@@ -133,18 +137,13 @@
 
             })
 
-            // this.cookietoarray();
+
             this.btn.on('click', function() {
                 _this.btnclick(this)
             })
         }
 
-        // cookietoarray() {
-        //     if ($.cookie('cookiesid') && getcookie('cookienum')) { //判断商品是第一次存还是多次存储
-        //         arrsid = getcookie('cookiesid').split(','); //cookie商品的sid  
-        //         arrnum = getcookie('cookienum').split(','); //cookie商品的num
-        //     }
-        // }
+
         left() {
             if (this.num > 0) {
                 this.num--;
@@ -156,16 +155,33 @@
             this.num++;
             this.input.val(this.num)
         }
-        btnclick(btn) {
-            console.log($(btn))
-            var $sid = $(btn).parents('.big-wrapper').find('.spic-pic').attr('sid');
-            console.log($sid)
-            $.cookie('sid', $sid)
-
-            // cookietoarray(); //获取已经存在的cookie值。
-
+        cookie() {
+            if ($.cookie('sid') && $.cookie('num')) { //判断商品是第一次存还是多次存储
+                this.arrsid = $.cookie('sid').split(','); //cookie商品的sid  
+                this.arrnum = $.cookie('num').split(','); //cookie商品的num
+            }
         }
+        btnclick(btn) {
 
+            var $sid = $(btn).parents('.big-wrapper').find('.spic-pic').attr('sid');
+            // 取出的数据进行匹配
+            this.cookie()
+            if ($.inArray($sid, this.arrsid) != -1) {
+                var $num1 = parseInt(this.input.val()) + parseInt(this.arrnum[$.inArray($sid, this.arrsid)]);
+                this.arrnum[$.inArray($sid, this.arrsid)] = $num1;
+                $.cookie('num', this.arrnum, { expires: 7 })
+            } else {
+                this.arrsid.push($sid)
+                this.arrnum.push(parseInt(this.input.val()))
+                $.cookie('sid', this.arrsid, { expires: 7 })
+                $.cookie('num', this.arrnum, { expires: 7 })
+            }
+        }
     }
-    new Ruturndata().init()
+    setTimeout(function() {
+        new Ruturndata().init();
+    }, 200)
+
+
+
 })(jQuery);

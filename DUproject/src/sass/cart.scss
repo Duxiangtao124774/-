@@ -164,9 +164,12 @@ label {
                             width: 78px;
                             height: 78px;
                             border: 1px solid #eaeaea;
-                            img {
-                                width: 100%;
-                                height: 100%;
+                            a {
+                                display: block;
+                                img {
+                                    width: 78px;
+                                    height: 78px;
+                                }
                             }
                         }
                         dd {
@@ -177,7 +180,7 @@ label {
                             box-sizing: border-box;
                             a {
                                 display: block;
-                                color: #000
+                                color: #000;
                             }
                             p {
                                 width: 148px;

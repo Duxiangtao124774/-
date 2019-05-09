@@ -100,7 +100,7 @@
             <ul>
                 <li class="l1">
                     <label for="">
-                        <input type="checkbox">
+                        <input type="checkbox" class="allselect">
                         <b>全选</b>
                     </label>
                 </li>
@@ -153,12 +153,14 @@
                         <p>颜色：漂白</p>
 
                     </li>
+                    <!-- em存放一件商品的价格 -->
                     <li class="li4"><i>￥199</i><em>￥118.9</em></li>
                     <li class="li5">
                         <span class="decrease">-</span>
                         <input type="text" value="1">
                         <span class="add">+</span>
                     </li>
+                    <!-- li6是存放一种商品的总价格 -->
                     <li class="li6">￥118.9</li>
                     <li class="li7">
                         <a href="#">移入我的点赞</a>
@@ -171,8 +173,8 @@
                     <li class="li1">
                         <p>
                             <label for="">
-                                        <input type="checkbox">
-                                    </label>
+                                <input type="checkbox">
+                            </label>
                         </p>
                     </li>
                     <li class="li2">
@@ -213,17 +215,17 @@
                     <li class="li1">
                         <p>
                             <label for="">
-                                            <input type="checkbox">
-                                        </label>
+                                <input type="checkbox">
+                            </label>
                         </p>
                     </li>
                     <li class="li2">
                         <dl>
                             <dt>
-                                            <a href="#">
-                                                <img src="https://pic.banggo.com/sources/images/goods/MC/508267/508267_00_00.jpg?x-oss-process=image/resize,m_lfit,w_90" alt="">
-                                            </a>
-                                        </dt>
+                                 <a href="#">
+                                     <img src="https://pic.banggo.com/sources/images/goods/MC/508267/508267_00_00.jpg?x-oss-process=image/resize,m_lfit,w_90" alt="">
+                                </a>
+                            </dt>
                             <dd>
                                 <a href="#">
                                     <p>
@@ -273,9 +275,11 @@
     <!-- 底部 -->
     <div id="bottom"></div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="script/thirdplugins/jquery.cookie.js"></script>
     <script>
         $('#bottom').load('2bottom.html')
     </script>
+    <script src="script/js/cart.js"></script>
 </body>
 
 </html>
