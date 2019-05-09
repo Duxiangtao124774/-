@@ -1,8 +1,3 @@
-;
-(function($) {
-
-})(jQuery);
-
 ; //渲染详情页数据
 (function($) {
     var $sid = location.search.substr(5);
@@ -19,7 +14,7 @@
             var $listarr = data.spiclist.split('&');
             console.log($listarr) //spiclist小图标的地址
             var $listStr = '';
-            $('.spic').find('img').attr('src', data.bpic);
+            $('.spic').find('.spic-pic').attr('src', data.bpic).attr('sid', data.sid);
             $('.bf').find('img').attr('src', data.bpic);
             $('.detail').find('h3').html(data.name + data.discrip);
             $('.detail .priceinfo').find('strong').html('￥' + data.price)
@@ -28,6 +23,8 @@
             })
             $('.smallpic ul').html($listStr)
             $('title').html(data.discrip)
+
+            // 加入放大镜效果
             class scale {
                 constructor() {
                     this.bigwrap = $('.big-wrapper')
@@ -111,4 +108,64 @@
         }
     })
 
+})(jQuery);;
+
+(function($) {
+    class Ruturndata {
+        constructor() {
+            this.btn = $('.shop-bag a');
+            this.arrsid = [];
+            this.arrnum = [];
+            this.input = $('.buy .num');
+            this.num = 0;
+            this.btnleft = $('.buy .jian');
+            this.btnright = $('.buy .jia');
+        }
+        init() {
+            var _this = this;
+            this.btnleft.on('click', function() {
+                _this.left();
+
+            })
+
+            this.btnright.on('click', function() {
+                _this.right();
+
+            })
+
+            // this.cookietoarray();
+            this.btn.on('click', function() {
+                _this.btnclick(this)
+            })
+        }
+
+        // cookietoarray() {
+        //     if ($.cookie('cookiesid') && getcookie('cookienum')) { //判断商品是第一次存还是多次存储
+        //         arrsid = getcookie('cookiesid').split(','); //cookie商品的sid  
+        //         arrnum = getcookie('cookienum').split(','); //cookie商品的num
+        //     }
+        // }
+        left() {
+            if (this.num > 0) {
+                this.num--;
+            }
+            this.input.val(this.num)
+
+        }
+        right() {
+            this.num++;
+            this.input.val(this.num)
+        }
+        btnclick(btn) {
+            console.log($(btn))
+            var $sid = $(btn).parents('.big-wrapper').find('.spic-pic').attr('sid');
+            console.log($sid)
+            $.cookie('sid', $sid)
+
+            // cookietoarray(); //获取已经存在的cookie值。
+
+        }
+
+    }
+    new Ruturndata().init()
 })(jQuery);
