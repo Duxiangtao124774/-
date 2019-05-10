@@ -141,6 +141,8 @@
             this.btn.on('click', function() {
                 _this.btnclick(this)
             })
+            console.log($.cookie('num'))
+                // this.cartnum.html() = ($.cookie('num'))
         }
 
 

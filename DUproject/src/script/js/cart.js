@@ -7,16 +7,16 @@
         }).done(function(data) {
             $.each(data, function(index, value) {
                 if (id == value.sid) { //遍历判断sid和传入的sid是否相同，方便将那条数据设置到渲染的商品列表中。
-
-                    $('.product-wrapper').find('.li2').find('img').attr('src', value.indexpic);
-                    $('.product-wrapper').find('.li2').find('img').attr('sid', value.sid);
-                    $('.product-wrapper').find('.li2').find('p').html(value.name + value.discrip);
-                    $('.product-wrapper').find('.li4').find('em').html(value.price);
-                    $('.product-wrapper').find('.li5').find('input').val(count);
+                    var $clonebox = $('.product-wrapper:hidden').clone(true, true);
+                    $clonebox.find('.li2').find('img').attr('src', value.indexpic);
+                    $clonebox.find('.li2').find('img').attr('sid', value.sid);
+                    $clonebox.find('.li2').find('p').html(value.name + value.discrip);
+                    $clonebox.find('.li4').find('em').html(value.price);
+                    $clonebox.find('.li5').find('input').val(count);
                     //计算每个商品的价格。
-                    $('.product-wrapper').find('.li6').html((value.price * count).toFixed(2));
-
-                    $('.product').append($('.product-wrapper'));
+                    $clonebox.find('.li6').html((value.price * count).toFixed(2));
+                    $clonebox.css('display', 'block');
+                    $('.product .wrapper').append($clonebox);
                     priceall(); //计算总价的
                 }
             });
@@ -35,7 +35,7 @@
     function priceall() {
         var $sum = 0;
         var $count = 0;
-        $('.product-wrapper').each(function(index, element) {
+        $('.product-wrapper:visible').each(function(index, element) {
             if ($(element).find('label input').prop('checked')) {
                 $sum += parseInt($(element).find('.li5').find('input').val());
                 $count += parseFloat($(element).find('.li6').html());
@@ -43,19 +43,19 @@
         });
 
         $('.p5').find('em').html($sum);
-        $('.p4').html('￥' + $count.toFixed(2));
+        $('.p3 i').html('￥' + $count.toFixed(2));
     }
 
     //5.全选操作
     $('.allselect').on('change', function() {
-        $('.product-wrapper').find(':checkbox').prop('checked', $(this).prop('checked'));
+        $('.product').find(':checkbox').prop('checked', $(this).prop('checked'));
         $('.allselect').prop('checked', $(this).prop('checked'));
         priceall(); //取消选项，重算总和。
     });
 
-    var $inputs = $('.product-wrapper').find(':checkbox');
+    var $inputs = $('.product-wrapper:visible').find(':checkbox');
     $('.product').on('change', $inputs, function() { //事件的委托的this指向被委托的元素
-        if ($('.product-wrapper').find('input:checkbox').length == $('.product-wrapper').find('input:checked').size()) {
+        if ($('.product-wrapper:visible').find('input:checkbox').length == $('.product-wrapper:visible').find('input:checked').size()) {
             $('.allselect').prop('checked', true);
         } else {
             $('.allselect').prop('checked', false);
@@ -74,7 +74,7 @@
         $(this).parents('.product-wrapper').find('.li5 input').val($count); //赋值回去
         $(this).parents('.product-wrapper').find('.li6').html(singlegoodsprice($(this))); //改变后的价格
         priceall(); //重新计算总和。
-        $.cookie($(this)); //将改变的数量重新添加到cookie
+        setcookie($(this)); //将改变的数量重新添加到cookie
 
     });
 
@@ -88,7 +88,7 @@
         $(this).parents('.product-wrapper').find('.li5 input').val($count);
         $(this).parents('.product-wrapper').find('.li6').html(singlegoodsprice($(this))); //改变后的价格
         priceall();
-        $.cookie($(this));
+        setcookie($(this));
     });
 
     //直接输入改变数量
@@ -108,7 +108,7 @@
         }
         $(this).parents('.product-wrapper').find('.li6').html(singlegoodsprice($(this))); //改变后的价格
         priceall();
-        $.cookie($(this));
+        setcookie($(this));
     });
 
     //7.计算数量改变后单个商品的价格
@@ -148,26 +148,26 @@
         });
         arrsid.splice($index, 1); //删除数组对应的值
         arrnum.splice($index, 1); //删除数组对应的值
-        addcookie('cookiesid', arrsid, 7); //添加cookie
-        addcookie('cookienum', arrnum, 7); //添加cookie
+        $.cookie('sid', arrsid, 7); //添加cookie
+        $.cookie('num', arrnum, 7); //添加cookie
     }
 
     //删除单个商品的函数(委托)
-    $('.item-list').on('click', '.b-action a', function(ev) {
+    $('.product').on('click', '.li7 .delet', function(ev) {
         cookietoarray(); //得到数组,上面的删除cookie需要。
         if (confirm('你确定要删除吗？')) {
-            $(this).first().parents('.goods-info').remove(); //通过当前点击的元素找到整个一行列表，删除
+            $(this).first().parents('.product-wrapper').remove(); //通过当前点击的元素找到整个一行列表，删除
         }
-        delgoodslist($(this).first().parents('.goods-info').find('img').attr('sid'), arrsid);
+        delgoodslist($(this).first().parents('.product .wrapper').find('img').attr('sid'), arrsid);
         priceall();
     });
 
 
     //删除全部商品的函数
-    $('.operation a:first').on('click', function() {
+    $('.p1').on('click', function() {
         cookietoarray(); //得到数组,上面的删除cookie需要。
-        if (confirm('你确定要全部删除吗？')) {
-            $('.goods-item:visible').each(function() {
+        if (confirm('你确定要删除吗？')) {
+            $('.product-wrapper:visible').each(function() {
                 if ($(this).find('input:checkbox').is(':checked')) { //复选框一定是选中的
                     $(this).remove();
                     delgoodslist($(this).find('img').attr('sid'), arrsid);
