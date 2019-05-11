@@ -40,18 +40,18 @@
                 <div class="content clear">
                     <!-- 表单内容 -->
                     <div class="form clear">
-                        <form action="">
+                        <form method="post" onsubmit="return false;">
                             <div class="item first">
                                 <div class="text lf">
                                     用户名：
                                 </div>
                                 <div class="input lf">
-                                    <input type="text" class="lf">
+                                    <input type="text" class="lf" id="username" name="username">
                                 </div>
                                 <!-- 提示信息 -->
                                 <div class="tips-wrap lf">
-                                    <div class="tips lf">
-                                        <span>请输入账户或邮箱地址</span>
+                                    <div class="tips lf err">
+                                        <span>用户名或者密码错误！</span>
                                     </div>
                                 </div>
 
@@ -60,12 +60,12 @@
                             <div class="item">
                                 <div class="text lf">手机号码：</div>
                                 <div class="input lf">
-                                    <input type="text" class="lf">
+                                    <input type="text" class="lf" id="tel" name="tel">
                                 </div>
                                 <!-- 提示信息 -->
                                 <div class="tips-wrap lf">
                                     <div class="tips lf">
-                                        <span>请输入密码</span>
+                                        <span></span>
                                     </div>
                                 </div>
 
@@ -83,7 +83,7 @@
                                 <!-- 提示信息 -->
                                 <div class="tips-wrap lf">
                                     <div class="tips lf">
-                                        <span>请输入验证码</span>
+                                        <span>验证码错误！</span>
                                     </div>
                                 </div>
 
@@ -91,9 +91,9 @@
                             <div class="item">
                                 <div class="text lf">&nbsp;</div>
                                 <div class="lf">
-                                    <input type="checkbox" name="username" id="username">
-                                    <label for="username">记住用户名 </label>
-                                    <input type="checkbox" name="login" id="login">
+                                    <input type="checkbox" checked>
+                                    <label for="username" checked>记住用户名 </label>
+                                    <input type="checkbox" checked>
                                     <label for="login"> 自动登录 </label>
                                 </div>
                             </div>
@@ -129,7 +129,6 @@
     <!-- 底部 -->
     <div id="footer">
         <div class="r-wrapper">
-
             美特斯邦威集团网站：
             <a href="#">美特斯邦威</a> |
 
@@ -140,6 +139,9 @@
 
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="script/thirdplugins/jquery.cookie.js"></script>
+    <script src="script/js/login.js"></script>
 </body>
 
 </html>

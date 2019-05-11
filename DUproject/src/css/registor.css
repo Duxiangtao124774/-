@@ -88,12 +88,17 @@
 .zc .content .left form .item .input .third-input {
   width: 128px;
 }
-.zc .content .left form .item .input .tips {
-  width: 305px;
-  margin-top: -2px;
-  display: inline-block;
-  color: #999;
-  font-size: 12px;
+
+.tips {
+  font-size: 14px;
+}
+.tips em {
+  border: 2px solid lavender;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
 }
 
 .third .tips a {
@@ -101,17 +106,14 @@
 }
 
 .btn {
-  background-position: -226px -168px;
-  display: inline-block;
   width: 152px;
   height: 34px;
-  line-height: 34px;
-  background-image: url(https://passport.banggo.com/CASServer/themes/banggo/images/buttons.png);
-  background-repeat: no-repeat;
-}
-.btn span {
-  display: inline-block;
-  text-indent: -9999px;
+  font-size: 16px;
+  color: #fff;
+  background: #ff0000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .right {

@@ -141,8 +141,12 @@
             this.btn.on('click', function() {
                 _this.btnclick(this)
             })
-            console.log($.cookie('num'))
-                // this.cartnum.html() = ($.cookie('num'))
+            var $num = $.cookie('num').split(',')
+            var $count = 0
+            $.each($num, function(index, value) {
+                $count += +value
+            })
+            this.cartnum.html($count)
         }
 
 
@@ -178,6 +182,13 @@
                 $.cookie('sid', this.arrsid, { expires: 7 })
                 $.cookie('num', this.arrnum, { expires: 7 })
             }
+            var $num = $.cookie('num').split(',')
+            var $count = 0
+            $.each($num, function(index, value) {
+                $count += +value
+            })
+            this.cartnum.html($count)
+            alert('添加购物车成功')
         }
     }
     setTimeout(function() {

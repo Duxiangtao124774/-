@@ -1,5 +1,6 @@
 ; //轮播图效果
 (function($) {
+
     class Banner {
         constructor() {
             this.banner = $('#banner');
@@ -203,6 +204,23 @@
         }
     })
 
-
-
+})(jQuery);
+(function($) {
+    setTimeout(function() {
+        $(function() {
+            if ($.cookie('UserName')) {
+                $('#login').hide();
+                $('#registor').hide();
+                $('#fail').show().html('退出');
+                $('#success').show().html('欢迎您,' + $.cookie('UserName'));
+            }
+            $('#fail').on('click', function() {
+                $.cookie('UserName', '', { expires: -1 });
+                $('#success').hide();
+                $('#fail').hide()
+                $('#login').show();
+                $('#registor').show();
+            });
+        });
+    }, 200)
 })(jQuery)

@@ -181,6 +181,14 @@
   display: block;
 }
 
+#success {
+  display: none;
+}
+
+#fail {
+  display: none;
+}
+
 #header {
   width: 100%;
   height: auto;

@@ -134,7 +134,7 @@
         cookietoarray(); //得到数组
         var $index = obj.parents('.product-wrapper').find('img').attr('sid'); //通过id找数量的位置
         arrnum[$.inArray($index, arrsid)] = obj.parents('.product-wrapper').find('.li5 input').val();
-        $.cookie('num', arrnum, 7);
+        $.cookie('num', arrnum, { expires: 2 });
     }
 
     //9.删除操作
@@ -148,8 +148,9 @@
         });
         arrsid.splice($index, 1); //删除数组对应的值
         arrnum.splice($index, 1); //删除数组对应的值
-        $.cookie('sid', arrsid, 7); //添加cookie
-        $.cookie('num', arrnum, 7); //添加cookie
+        $.cookie('sid', arrsid, { expires: 2 }); //添加cookie
+        $.cookie('num', arrnum, { expires: 2 }); //添加cookie
+
     }
 
     //删除单个商品的函数(委托)
@@ -160,6 +161,20 @@
         }
         delgoodslist($(this).first().parents('.product .wrapper').find('img').attr('sid'), arrsid);
         priceall();
+
+        // 统计有几种类型的商品，让统计价格条固定定位
+        var $num = $.cookie('num').split(',')
+        if ($num.length >= 3) {
+            $('.statistics').css({
+                'position': 'fixed',
+                'bottom': 0,
+                'zIndex': 10
+            })
+        } else {
+            $('.statistics').css(
+                'position', 'inherit'
+            )
+        }
     });
 
 
@@ -176,6 +191,18 @@
             priceall();
         }
     });
+    // 当有三个商品以上时结算总结行固定定位
+    var $num = $.cookie('num').split(',')
+    if ($num.length >= 3) {
+        $('.statistics').css({
+            'position': 'fixed',
+            'bottom': 0,
+            'zIndex': 10
+        })
+    } else {
+        $('.statistics').css(
+            'position', 'inherit'
+        )
+    }
 
-
-}(jQuery);
+}(jQuery);;

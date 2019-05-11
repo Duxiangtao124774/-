@@ -22,8 +22,7 @@
             width: 175px;
             height: 175px;
         } */
-        
-        @font-face {
+        /* @font-face {
             font-family: fpIconFont;
             src: url('fonts/font_eu7qkdb0zt3jif6r.woff') format('woff')
         }
@@ -38,17 +37,28 @@
             font-family: mui-global-iconfont!important;
             font-size: 12px;
             font-style: normal
-        }
+        } */
     </style>
 </head>
 
 <body>
-    <i class="fp-iconfont" data-spm-anchor-id="875.7931836/B.fpLift.i5.da794265vcrlLy"></i>
-    <i class="mui-global-iconfont" data-spm-anchor-id="875.7931836/B.a2226mz.i0.da794265vcrlLy">󰅈</i>
-    <!-- <div class="sn-qrcode-content "></div>
-    <div class="sn-qrcode "></div>
-    <img src="https://img.alicdn.com/tfs/TB1ztBlaMMPMeJjy1XbXXcwxVXa-200-60.png " alt=" ">
-    <img src="https://img.alicdn.com/imgextra/i3/2635590370/O1CN01efJUVt1EbV44WLG3Y_!!2635590370.gif " alt=" "> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script>
+        var str1 = '';
+        var $str = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPLKJHGFDSAZXCVBNM";
+        // console.log(str[1])
+
+        // var a1 = str.charAt(Math.floor(Math.random() * 62))
+        // var b1 = str.charAt(Math.floor(Math.random() * 62))
+        // console.log(a1 + b1)
+        // for (var i = 0; i < 4; i++) {
+        //     str1 += str.charAt(Math.floor(Math.random() * 62))
+        // };
+        // console.log(str1)
+        $.each($str, function(index, value) {
+            console.log(index + value)
+        })
+    </script>
 </body>
 
 </html>

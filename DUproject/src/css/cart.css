@@ -177,6 +177,14 @@
   display: block;
 }
 
+#success {
+  display: none;
+}
+
+#fail {
+  display: none;
+}
+
 body {
   font-size: 12px;
 }
